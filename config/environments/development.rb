@@ -66,6 +66,8 @@ Rails.application.configure do
 
   config.action_mailer.default_options = { from: 'notifications@localhost' }
 
+  config.action_mailer.preview_path = Rails.root.join('spec', 'mailers', 'previews')
+
   # If using a Heroku, Vagrant or generic remote development environment,
   # use letter_opener_web, accessible at  /letter_opener.
   # Otherwise, use letter_opener, which launches a browser window to view sent mail.

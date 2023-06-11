@@ -1,0 +1,19 @@
+%table.email-table{ cellspacing: 0, cellpadding: 0 }
+  %tbody
+    %tr
+      %td.email-body
+        .email-container
+          %table.content-section{ cellspacing: 0, cellpadding: 0 }
+            %tbody
+              %tr
+                %td.content-cell.hero
+                  .email-row
+                    .col-6
+                      %table.column{ cellspacing: 0, cellpadding: 0 }
+                        %tbody
+                          %tr
+                            %td.column-cell.text-center.padded
+                              %h1 Your weekly digest
+
+- @weekly_highlights.each_with_index do |status, i|
+  = render 'notification_mailer/status', status: status, i: i + 1, highlighted: true, time_zone: @account.user_time_zone
